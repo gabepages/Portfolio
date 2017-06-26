@@ -21,7 +21,7 @@ h2{
   font-size: 35px;
   border-bottom: 2px solid rgba(250,130,123,1);;
   position: relative;
-  margin-bottom: 25px;
+  margin-bottom: 55px;
 }
 
 h2::after{
@@ -40,6 +40,8 @@ h3{
   font-size: 24px;
   position: relative;
   margin-bottom: 55px;
+  margin-top: 0;
+  /*font-weight: lighter;*/
 }
 
 h3:before{
@@ -66,7 +68,7 @@ h3:after{
   transition: transform 0.4s ease-out;
 }
 
-p{font-family: Open Sans;}
+p{font-family: Open Sans;font-size: 16px;}
 
 .margin-tb{margin: 25px 0;}
 .margin-t{margin: 25px 0 0;}
@@ -270,7 +272,7 @@ header{
   letter-spacing: 0.05em;
   color: rgba(33, 158, 146, 1);
   box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
-  transition: all .15s ease;
+  transition: all .25s ease;
   cursor: pointer;
 }
 
@@ -300,4 +302,42 @@ header{
 
 .portfolio-section:hover h3::before, .portfolio-section:hover h3::after{
   transform: rotate(225deg) scale(1.2);
+}
+
+#profile-section img{
+  width: 100%;
+  border-radius: 1420px;
+  max-width: 230px;
+}
+
+#profile-section ul, .footer ul{
+  display: flex;
+  justify-content: center;
+
+}
+
+#profile-section li, .footer li{
+  padding: 0 35px;
+}
+
+#profile-section li i, .footer li i{
+  color: rgba(15, 112, 94, 1);
+  transition: all 0.3s ease;
+}
+
+#profile-section li i:hover, .footer li i:hover{
+  color: rgba(250,130,123,1);
+  transform: scale(1.05);
+}
+
+.footer{
+  background: linear-gradient(30deg, rgba(15, 112, 94, 1) 20%, rgba(108, 242, 212, 1) 75%, #00FACA 95% );
+}
+
+.footer .row{
+  margin-bottom: 0;
+}
+
+.footer li i{
+  color: white;
 }
