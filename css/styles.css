@@ -510,3 +510,110 @@ i.fa {
   right: 0;
   margin: 0 auto;
 }
+
+/*MEDIA QUERYS*/
+
+@media screen and (max-width:1200px) {
+  .portfolio-card-content h4 {
+    font-size: 22px;
+  }
+}
+
+@media screen and (max-width:992px) {
+  .portfolio-card-content h4 {
+    font-size: 28px;
+  }
+  .portfolio-card{
+    max-width: 500px;
+    margin: 0 auto 20px;
+  }
+  
+  .service-content {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  
+  .service-content:last-child {
+    margin-bottom: 15px;
+  }
+  
+  .service-content h3{
+    flex: 1 0 33%;
+    margin: 0 55px 0 0;
+    min-height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .service-content h3:before{
+    transform: rotate(0deg);
+    right: -28px;
+    bottom: 5px;
+    left: auto;
+  }
+  
+  .service-content h3:after{
+    left: auto;
+    right: -37px;
+    bottom: 29%;
+  }
+  
+}
+
+
+@media screen and (max-width:767px) {
+  #profile-section p{
+    text-align: center;
+  }
+  #profile-section li, .footer li {
+    padding: 0 20px;
+  }
+  .service-content h3{
+    flex: 1 0 25%;
+  }
+  
+}
+
+@media screen and (max-width:750px) {
+  .service-content {
+    display: block;
+    margin-bottom: 55px;
+  }
+  .service-content h3{
+    margin: 0;
+    min-height: 0;
+  }
+  
+  .service-content p {
+    margin: 10px 0;
+  }
+  
+  .service-content h3:before {
+    transform: rotate(90deg);
+    right: auto;
+    bottom: auto;
+    left: auto;
+    top: -55px;
+    margin: 0 auto;
+  }
+  
+  .service-content h3:after{
+    bottom: auto;
+    top: -44px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
+  .service-content:first-child h3::before, .service-content:first-child h3::after{
+    display: none;
+  }
+}
+
+
+@media screen and (max-width:425px) {
+  .portfolio-card-content h4 {
+    font-size: 24px;
+  }
+}
