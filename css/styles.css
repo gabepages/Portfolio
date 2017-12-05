@@ -86,7 +86,7 @@ p {
   margin: 0 0 25px;
 }
 
-.header-content ul {
+.header-content #desktop-menu, .header-content #mobile-menu {
   font-family: Open Sans;
   position: fixed;
   top: 0;
@@ -95,29 +95,130 @@ p {
   z-index: 1;
 }
 
-.header-content ul li {
+.header-content #desktop-menu li {
   display: inline-block;
   color: white;
   margin-right: 35px;
   font-size: 16px;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.1.5s ease;
   padding-bottom: 5px;
   border-bottom: 3px solid transparent;
 }
 
-.header-content ul li:hover {
+.header-content #desktop-menu li:hover {
   transform: translateY(-2px) scale(1.02);
 }
 
-.header-content ul .active {
+.header-content #desktop-menu .active {
   border-bottom: 3px solid rgba(250, 130, 123, 1);
   padding-bottom: 5px;
 }
 
-.header-content ul a {
+.header-content #desktop-menu a {
   color: white;
 }
+
+.header-content #mobile-menu{
+  left: 0;
+  right: 0;
+  padding-top: 28px;
+  text-align: center;
+  color: white;
+}
+
+.header-content #mobile-menu #custom-menu-icon{
+  height: 3px;
+  width: 30px;
+  background: white;
+  margin: 0 auto;
+  position: relative;
+  /*-webkit-animation: secondBarAnimation 2s linear infinite;
+  -moz-animation: secondBarAnimation 2s linear infinite;
+  animation: secondBarAnimation 2s linear infinite;*/
+}
+
+.header-content #mobile-menu #custom-menu-icon::before{
+  position: absolute;
+  content: "";
+  width: 40px;
+  height: 3px;
+  top: -10px;
+  left: 0;
+  background: white;
+  -webkit-animation: firstBarAnimation 2s linear infinite;
+  -moz-animation: firstBarAnimation 2s linear infinite;
+  animation: firstBarAnimation 2s linear infinite;
+}
+
+.header-content #mobile-menu #custom-menu-icon::after{
+  position: absolute;
+  content: "";
+  width: 20px;
+  height: 3px;
+  top: 10px;
+  left: 0;
+  background: white;
+  -webkit-animation: thirdBarAnimation 2s linear infinite;
+  -moz-animation: thirdBarAnimation 2s linear infinite;
+  animation: thirdBarAnimation 2s linear infinite;
+}
+
+/*FIRST MENU BAR ANIMATION*/
+@-webkit-keyframes firstBarAnimation {
+    0%{width: 40px}
+    50%{width: 20px}
+    100%{width: 40px}
+}
+@-moz-keyframes firstBarAnimation {
+    0%{width: 40px}
+    50%{width: 20px}
+    100%{width: 40px}
+}
+@keyframes firstBarAnimation {
+    0%{width: 40px}
+    50%{width: 20px}
+    100%{width: 40px}
+}
+
+/*SECOND MENU BAR ANIMATION*/
+/*@-webkit-keyframes secondBarAnimation {
+    0%{width: 30px}
+    50%{width: 40px}
+    100%{width: 30px}
+}
+@-moz-keyframes secondBarAnimation {
+    0%{width: 30px}
+    50%{width: 40px}
+    100%{width: 30px}
+}
+@keyframes secondBarAnimation {
+    0%{width: 30px}
+    50%{width: 40px}
+    100%{width: 30px}
+}*/
+
+/*THIRD MENU BAR ANIMATION*/
+@-webkit-keyframes thirdBarAnimation {
+    0%{width: 20px}
+    50%{width: 40px}
+    100%{width: 20px}
+}
+@-moz-keyframes thirdBarAnimation {
+    0%{width: 20px}
+    50%{width: 40px}
+    100%{width: 20px}
+}
+@keyframes thirdBarAnimation {
+    0%{width: 20px}
+    50%{width: 40px}
+    100%{width: 20px}
+}
+
+
+
+
+#mobile-menu{display: none;}
 
 #nav-background {
   height: 60px;
@@ -145,6 +246,9 @@ header {
   align-items: center;
 }
 
+
+
+/*HEADER SHAPES*/
 .slanted-header span:nth-child(1) {
   position: absolute;
   width: 30px;
@@ -288,7 +392,7 @@ header {
   letter-spacing: 0.05em;
   color: rgba(33, 158, 146, 1);
   box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);
-  transition: all .25s ease;
+  transition: all .21.5s ease;
   cursor: pointer;
 }
 
@@ -316,7 +420,8 @@ header {
 .section-divider {
   width: 100%;
   height: 3px;
-  background: linear-gradient(30deg, #00FACA 5%, rgba(15, 112, 94, 1) 20%, rgba(108, 242, 212, 1) 75%, rgba(250, 130, 123, 1) 90%);
+  background: rgba(15, 112, 94, 0.65);
+  /*background: linear-gradient(30deg, #00FACA 5%, rgba(15, 112, 94, 1) 20%, rgba(108, 242, 212, 1) 75%, rgba(250, 130, 123, 1) 90%);*/
 }
 
 
@@ -345,7 +450,7 @@ header {
 
 #profile-section li i, .footer li i {
   color: rgba(15, 112, 94, 1);
-  transition: all 0.3s ease;
+  transition: all 0.1.5s ease;
 }
 
 #profile-section li i:hover, .footer li i:hover {
@@ -389,7 +494,7 @@ i.fa {
 .portfolio-card{
   position: relative;
   border-radius: 4px;
-  transition: all 0.8s cubic-bezier(.25,.8,.25,1);
+  transition: all 0.8s linear(.25,.8,.25,1);
   cursor: pointer;
 }
 
@@ -399,7 +504,7 @@ i.fa {
 
 .portfolio-card::before{
   position: absolute;
-  transition: all 0.8s cubic-bezier(.25,.8,.25,1);
+  transition: all 0.8s linear(.25,.8,.25,1);
   content: '';
   top: 0;
   right: 0;
@@ -419,7 +524,7 @@ i.fa {
 
 .portfolio-card::after{
   position: absolute;
-  transition: all 0.8s cubic-bezier(.25,.8,.25,1);
+  transition: all 0.8s linear(.25,.8,.25,1);
   content: '';
   top: 0;
   right: 0;
@@ -456,7 +561,7 @@ i.fa {
 
 .portfolio-card-content h4{
   font-size: 26px;
-  transition: all 0.75s cubic-bezier(.25,.8,.25,1);
+  transition: all 0.75s linear(.25,.8,.25,1);
   opacity: 1;
   color: white;
   position: relative;
@@ -472,7 +577,7 @@ i.fa {
 
 .portfolio-card-content a::before{
   position: absolute;
-  transition: all 0.6s cubic-bezier(.25,.8,.25,1);
+  transition: all 0.6s linear(.25,.8,.25,1);
   content: '';
   height: 2px;
   width: 100%;
@@ -483,7 +588,7 @@ i.fa {
 
 .portfolio-card-content a::after{
   position: absolute;
-  transition: all 0.6s cubic-bezier(.25,.8,.25,1);
+  transition: all 0.6s linear(.25,.8,.25,1);
   content: '';
   height: 2px;
   width: 100%;
@@ -527,17 +632,17 @@ i.fa {
     max-width: 500px;
     margin: 0 auto 20px;
   }
-  
+
   .service-content {
     display: flex;
     align-items: center;
     margin-bottom: 30px;
   }
-  
+
   .service-content:last-child {
     margin-bottom: 15px;
   }
-  
+
   .service-content h3{
     flex: 1 0 33%;
     margin: 0 55px 0 0;
@@ -546,20 +651,20 @@ i.fa {
     justify-content: center;
     align-items: center;
   }
-  
+
   .service-content h3:before{
     transform: rotate(0deg);
     right: -28px;
     bottom: 5px;
     left: auto;
   }
-  
+
   .service-content h3:after{
     left: auto;
     right: -37px;
     bottom: 29%;
   }
-  
+
 }
 
 
@@ -573,7 +678,7 @@ i.fa {
   .service-content h3{
     flex: 1 0 25%;
   }
-  
+
 }
 
 @media screen and (max-width:750px) {
@@ -585,11 +690,11 @@ i.fa {
     margin: 0;
     min-height: 0;
   }
-  
+
   .service-content p {
     margin: 10px 0;
   }
-  
+
   .service-content h3:before {
     transform: rotate(90deg);
     right: auto;
@@ -598,7 +703,7 @@ i.fa {
     top: -55px;
     margin: 0 auto;
   }
-  
+
   .service-content h3:after{
     bottom: auto;
     top: -44px;
@@ -611,34 +716,48 @@ i.fa {
   }
 }
 
-
-@media screen and (max-width:425px) {
-  .portfolio-card-content h4 {
-    font-size: 24px;
+@media screen and (max-width:600px) and (min-width:501px) {
+  .header-content h1{
+    font-size: 38px;
   }
-  
+  .header-content p{
+    font-size: 15px;
+  }
+
+  .slanted-header span:nth-child(3){
+    top: 10%;
+    left: -55px;
+  }
+
+  .slanted-header span:nth-child(1), .slanted-header span:nth-child(2){display: none;}
+}
+
+@media screen and (max-width:500px) {
+  #mobile-menu{display: block;}
+  #desktop-menu{display: none;}
+
   .header-content h1{
     font-size: 30px;
     margin-bottom: 12px;
   }
-  
+
   .header-content p{
     font-size: 14px;
   }
-  
+
   .header-content ul{
     display: none;
   }
-  
+
   .header-content .normal-button:first-child {
       margin-bottom: 10px;
   }
-  
+
   .normal-button{
     padding: 10px 22px;
     font-size: 13px;
   }
-  
+
   .slanted-header span:nth-child(1){
     top: 65%;
     left: 75%;
@@ -647,11 +766,11 @@ i.fa {
     height: 25px;
     width: 25px;
   }
-  
+
   .slanted-header span:nth-child(1)::after{
     height: 50px;
   }
-  
+
   .slanted-header span:nth-child(2){
     border-left: 20px solid transparent;
     border-right: 20px solid transparent;
@@ -659,27 +778,34 @@ i.fa {
     top: 85%;
     left: 85%;
   }
-  
+
   .slanted-header span:nth-child(3){
     top: -2%;
     left: -10%;
   }
-  
+
   .slanted-header span:nth-child(4){
     width: 40%;
     height: 12%;
   }
-  
+
   .slanted-header span:nth-child(5){
     top: 5%;
   }
-  
+
   .slanted-header span:nth-child(6){
     display: none;
   }
-  
+
   .slanted-header span:nth-child(7){
     display: none;
+  }
+}
+
+
+@media screen and (max-width:425px) {
+  .portfolio-card-content h4 {
+    font-size: 24px;
   }
 }
 
