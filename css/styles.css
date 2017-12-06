@@ -32,7 +32,7 @@ h2::after {
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
   border-top: 16px solid rgba(250, 130, 123, 1);
-  top: 103%;
+  top: 102%;
   left: 0;
 }
 
@@ -148,6 +148,7 @@ p {
   top: -10px;
   left: 0;
   background: white;
+
   -webkit-animation: firstBarAnimation 2s linear infinite;
   -moz-animation: firstBarAnimation 2s linear infinite;
   animation: firstBarAnimation 2s linear infinite;
@@ -160,6 +161,7 @@ p {
   height: 3px;
   top: 10px;
   left: 0;
+  transition: all 0.25s ease-in;
   background: white;
   -webkit-animation: thirdBarAnimation 2s linear infinite;
   -moz-animation: thirdBarAnimation 2s linear infinite;
@@ -216,6 +218,19 @@ p {
     50%{width: 40px}
     100%{width: 20px}
 }
+
+.header-content #mobile-menu.open #custom-menu-icon{
+  width: 40px;
+  transform: rotate(45deg);
+  transition: all 0.25s ease-in;
+}
+
+.header-content #mobile-menu.open #custom-menu-icon::before{
+  animation: none;
+  transform: rotate(90deg);
+  top: 0;
+}
+.header-content #mobile-menu.open #custom-menu-icon::after{display: none;}
 
 .header-content #mobile-menu .mobile-menu-content{
   position: fixed;
