@@ -1,17 +1,19 @@
 var $ = jQuery;
 
 $(document).ready(function() {
-  
+
   // Nav Background Change
   $(window).scroll( function(){
       var distanceScrolled = $(this).scrollTop();
-      if(distanceScrolled > 90){
+      if(distanceScrolled > 90 || $("#mobile-menu").hasClass('open')){
         $('#nav-background').css('opacity', "1");
+        $('.scroll-to-top').css('opacity', "1");
       }else {
         $('#nav-background').css('opacity', "0");
+        $('.scroll-to-top').css('opacity', "0");
       }
   });
-    
+
   // Anchor tag issue fix
   var $root = $('html, body');
   $('a').click(function(){
@@ -44,12 +46,12 @@ $(document).ready(function() {
       $('#nav-top').addClass('active')
     }
   })
-  
+
   // Magange "valign-wrapper" class
   if ($(window).width() <= 992) {
     $(".services-wrapper").removeClass('valign-wrapper');
   }
-  
+
   $(window).resize(function () {
     if ($(window).width() <= 992) {
       $(".services-wrapper").removeClass('valign-wrapper');
@@ -57,6 +59,41 @@ $(document).ready(function() {
       $(".services-wrapper").addClass('valign-wrapper');
     }
   })
-  
-  
+
+
+  $("#mobile-menu").on("click", function () {
+    if ($("#mobile-menu").hasClass('closed')) {
+      $("#mobile-menu.closed").removeClass("closed").addClass("open");
+      $("#nav-background").css("height", "100vh");
+      $("#nav-background").css("opacity", "1");
+      $('.scroll-to-top').css('opacity', "0");
+    }else{
+      $(".mobile-menu-content").removeClass('active');
+      $("#mobile-menu.open").removeClass("open").addClass("closed");
+      $("#nav-background").css("height", "60px");
+      if ($(window).scrollTop() < 90) {
+        $("#nav-background").css("opacity", "0");
+        $('.scroll-to-top').css('opacity', "0");
+      }else {
+        $('.scroll-to-top').css('opacity', "1");
+      }
+    }
+  });
+
+
+  $("#mobile-menu li a").on("click", function (event) {
+    setTimeout(function(){
+      $("#mobile-menu.open").removeClass("open").addClass("closed");
+      $("#nav-background").css("height", "60px");
+      $('.scroll-to-top').css('opacity', "1");
+      if ($(window).scrollTop() < 90) {
+        $("#nav-background").css("opacity", "0");
+        $('.scroll-to-top').css('opacity', "0");
+      }else {
+        $('.scroll-to-top').css('opacity', "1");
+      }
+    },750)
+  })
+
+
 });
