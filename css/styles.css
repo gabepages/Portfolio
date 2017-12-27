@@ -545,7 +545,7 @@ i.fa {
 .portfolio-card{
   position: relative;
   border-radius: 4px;
-  transition: all 0.8s linear(.25,.8,.25,1);
+  transition: all 0.5s ease;
   cursor: pointer;
 }
 
@@ -555,7 +555,7 @@ i.fa {
 
 .portfolio-card::before{
   position: absolute;
-  transition: all 0.8s linear(.25,.8,.25,1);
+  transition: all 0.5s ease;
   content: '';
   top: 0;
   right: 0;
@@ -575,7 +575,7 @@ i.fa {
 
 .portfolio-card::after{
   position: absolute;
-  transition: all 0.8s linear(.25,.8,.25,1);
+  transition: all 0.5s ease;
   content: '';
   top: 0;
   right: 0;
@@ -612,7 +612,7 @@ i.fa {
 
 .portfolio-card-content h4{
   font-size: 26px;
-  transition: all 0.75s linear(.25,.8,.25,1);
+  transition: all 0.35s ease;
   opacity: 1;
   color: white;
   position: relative;
@@ -628,7 +628,7 @@ i.fa {
 
 .portfolio-card-content a::before{
   position: absolute;
-  transition: all 0.6s linear(.25,.8,.25,1);
+  transition: all 0.6s ease;
   content: '';
   height: 2px;
   width: 100%;
@@ -639,7 +639,7 @@ i.fa {
 
 .portfolio-card-content a::after{
   position: absolute;
-  transition: all 0.6s linear(.25,.8,.25,1);
+  transition: all 0.6s ease;
   content: '';
   height: 2px;
   width: 100%;
@@ -885,17 +885,6 @@ i.fa {
     display: none;
   }
 
-  .scroll-to-top{
-    bottom: 93.5%;
-    z-index: 2;
-    background: transparent;
-  }
-
-  .scroll-to-top::before{
-    border-left: 13px solid transparent;
-    border-right: 13px solid transparent;
-    border-bottom: 26px solid rgba(250, 130, 123, 1);
-  }
 }
 
 
