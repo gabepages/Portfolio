@@ -16,7 +16,7 @@ $(document).ready(function() {
 
   // Anchor tag issue fix
   var $root = $('html, body');
-  $('a').click(function(){
+  $('a.nav-list-item').click(function(){
     if ($(this).attr('href')[0] == "#"){
       event.preventDefault()
       $root.animate({
@@ -94,6 +94,14 @@ $(document).ready(function() {
       }
     },750)
   })
+
+
+  // Initialize Modals
+  $('.modal').modal({
+    opacity: .6, // Opacity of modal background
+    inDuration: 400, // Transition in duration
+    outDuration: 300
+  });
 
 
 });

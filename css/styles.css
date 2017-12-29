@@ -239,7 +239,7 @@ p {
   bottom: 0;
   right: 100%;
   opacity: 0;
-  transition: all 0.275s ease-in;
+  transition: all 0.375s cubic-bezier(0.4, 0, 1, 1);
   padding:0 20px;
   text-align: left;
 }
@@ -622,11 +622,11 @@ i.fa {
   opacity: 0
 }
 
-.portfolio-card-content a{
+.portfolio-card-content span{
   position: relative;
 }
 
-.portfolio-card-content a::before{
+.portfolio-card-content span::before{
   position: absolute;
   transition: all 0.6s ease;
   content: '';
@@ -637,7 +637,7 @@ i.fa {
   background-color: rgba(250, 130, 123, 1);
 }
 
-.portfolio-card-content a::after{
+.portfolio-card-content span::after{
   position: absolute;
   transition: all 0.6s ease;
   content: '';
@@ -648,7 +648,7 @@ i.fa {
   background-color: rgba(250, 130, 123, 1);
 }
 
-.portfolio-card:hover .portfolio-card-content a::before{
+.portfolio-card:hover .portfolio-card-content span::before{
     top: 50%;
     width: 35px;
     right: 0;
@@ -657,7 +657,7 @@ i.fa {
     height: 3px;
 }
 
-.portfolio-card:hover .portfolio-card-content a::after{
+.portfolio-card:hover .portfolio-card-content span::after{
   transform: rotate(90deg);
   width: 35px;
   left: 0;
@@ -696,6 +696,55 @@ i.fa {
 
 .scroll-to-top:hover{
   transform: translateY(-2px) scale(1.02)
+}
+
+.modal h4{
+  text-align: center;
+  color: rgba(15, 112, 94, 1);
+  border-bottom: 2px solid rgba(250, 130, 123, 1);
+  padding-bottom: 15px;
+}
+
+.modal h5{
+  color: rgba(15, 112, 94, 1);
+  font-size: 22px;
+}
+
+.modal li{
+  border-left: 1px solid rgba(250, 130, 123, 1);
+  margin: 0px 10px 0 0px;
+  padding-left: 10px;
+  display: inline-block;
+}
+
+.modal li.last{
+  border-right: 1px solid rgba(250, 130, 123, 1);
+  padding-right: 10px;
+}
+
+.modal .modal-footer{
+  height: 70px;
+}
+
+.modal.modal-fixed-footer .modal-footer{
+  border-top: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.modal .modal-footer .normal-button{
+  padding: 8px 25px;
+  margin: 11px 10px 0;
+  float: left;
+}
+
+.modal .modal-footer .modal-close{
+  float: right;
+  margin-right: 10px;
+  margin-top: 13px;
+}
+
+.modal .modal-footer .modal-close i{
+  font-size: 35px;
+  color: rgba(15, 112, 94, 1);
 }
 
 /*MEDIA QUERYS*/
