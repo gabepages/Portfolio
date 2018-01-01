@@ -95,6 +95,11 @@ $(document).ready(function() {
     },750)
   })
 
+  // Form Submission
+  $('#contact-form').on('submit', function() {
+    $(this).css('opacity', 0);
+    $('#form-submitted').css('opacity', 1)
+  })
 
   // Initialize Modals
   $('.modal').modal({
