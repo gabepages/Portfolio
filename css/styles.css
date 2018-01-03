@@ -745,7 +745,8 @@ form{
 }
 
 .modal .modal-footer{
-  height: 70px;
+  height: auto;
+  min-height: 70px;
 }
 
 .modal.modal-fixed-footer .modal-footer{
@@ -773,6 +774,7 @@ form{
   display: flex;
   justify-content: space-around;
   align-items: flex-start;
+  margin-bottom: 10px;
 }
 
 .modal-images img{
@@ -996,10 +998,22 @@ form{
 
 }
 
+@media screen and (max-width:437px) {
+  .modal .modal-footer .normal-button{
+    width: 70%;
+  }
+  .modal .modal-footer .modal-close{
+    margin-top: 11px;
+  }
+}
 
 @media screen and (max-width:425px) {
   .portfolio-card-content h4 {
     font-size: 24px;
+  }
+
+  .modal h4{
+    font-size: 28px;
   }
 }
 
