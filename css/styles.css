@@ -883,9 +883,8 @@ form{
 
   .service-content h3:before {
     transform: rotate(90deg);
-    right: auto;
+    right: 50%;
     bottom: auto;
-    left: auto;
     top: -55px;
     margin: 0 auto;
   }
